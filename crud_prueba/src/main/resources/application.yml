@@ -1,0 +1,36 @@
+spring:
+  security:
+    basic:
+      enabled: false
+  application:
+    name: crud_prueba
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/login_db
+    username: app_user
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+jwt:
+  secret: mySuperSecretKeyThatIsAtLeast512BitsLongForHS512Algorithm123456789012345678901234567890
+  expiration: 86400000
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    com.example.crud_prueba: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
